@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Maison Étoile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">Maison Étoile</div>
+            <nav class="nav">
+                <a href="/index.html">Home</a>
+                <a href="/menu.html">Menu</a>
+                <a href="/reservations.html" class="cta">Reserve</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container narrow">
+        <h1 class="page-title">Admin — Reservations</h1>
+        <form id="admin-auth" class="card">
+            <label>
+                <span>Admin token</span>
+                <input type="password" id="admin-token" placeholder="Enter token" />
+            </label>
+            <label>
+                <span>Date (optional)</span>
+                <input type="date" id="list-date" />
+            </label>
+            <button type="button" id="load-reservations" class="button">Load reservations</button>
+        </form>
+
+        <div id="admin-results" class="card" style="display:none"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© <span id="year"></span> Maison Étoile</div>
+            <div>123 Atelier Lane, Paris • Wed–Sun 5:30–10:00</div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="/app.js" defer></script>
+</body>
+</html>
+
+

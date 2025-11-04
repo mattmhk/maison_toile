@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | Maison Étoile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">Maison Étoile</div>
+            <nav class="nav">
+                <a href="/index.html">Home</a>
+                <a href="/menu.html">Menu</a>
+                <a href="/reservations.html" class="cta active">Reserve</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container narrow">
+        <h1 class="page-title">Reserve a Table</h1>
+        <form id="reservation-form" class="card">
+            <div class="grid two">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="name" required placeholder="Your full name" />
+                </label>
+                <label>
+                    <span>Phone</span>
+                    <input type="tel" name="phone" required placeholder="(555) 123-4567" />
+                </label>
+            </div>
+            <div class="grid two">
+                <label>
+                    <span>Email (optional)</span>
+                    <input type="email" name="email" placeholder="name@email.com" />
+                </label>
+                <label>
+                    <span>Party size</span>
+                    <input type="number" name="partySize" min="1" max="8" required />
+                </label>
+            </div>
+            <div class="grid two">
+                <label>
+                    <span>Date</span>
+                    <input type="date" name="date" required />
+                </label>
+                <label>
+                    <span>Time</span>
+                    <input type="time" name="time" required />
+                </label>
+            </div>
+            <label>
+                <span>Notes (allergies, occasion)</span>
+                <textarea name="notes" rows="3" placeholder="Optional"></textarea>
+            </label>
+
+            <div id="availability" class="availability muted"></div>
+
+            <div class="actions">
+                <button type="button" id="check-btn" class="button outline">Check availability</button>
+                <button type="submit" class="button primary">Confirm reservation</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© <span id="year"></span> Maison Étoile</div>
+            <div>123 Atelier Lane, Paris • Wed–Sun 5:30–10:00</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="/app.js" defer></script>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cafe-website
+    env: node
+    plan: free
+    autoDeploy: true
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+
+
